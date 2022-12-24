@@ -1,19 +1,25 @@
 pipeline {
     agent any
-    tools{
-        maven 'myn'
-    }
     stages {
         stage('Build Application') {
             steps {
-                sh "mvn -f java-tomcat-sample/pom.xml clean package"
+                sh 'mvn -f java-tomcat-sample/pom.xml clean package'
             }
             post {
                 success {
                     echo "Now Archiving the Artifacts...."
-                    archiveArtifacts artifacts: "**/*.war"
+                    archiveArtifacts artifacts: '**/*.war'
                 }
             }
+        }
+#first build the above job after copy above job artifact--**/*.war in Deployment_Application_staging_Env job build that job by using copy artifact plugin--Do same for Deployment_Application_Prod_Env job#
+          
+        stage('Deploy in Staging Environment'){
+            steps{
+                build job: 'Deploy_Application_Staging_Env'
+
+            }
+            
         }
      
     }
