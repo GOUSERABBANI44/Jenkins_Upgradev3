@@ -12,7 +12,6 @@ pipeline {
                 }
             }
         }
-#first build the above job after copy above job artifact--**/*.war in Deployment_Application_staging_Env job build that job by using copy artifact plugin--Do same for Deployment_Application_Prod_Env job#
           
         stage('Deploy in Staging Environment'){
             steps{
