@@ -37,4 +37,4 @@ pipeline {
 
 
 
-####in above script  undetr tools--'myn'--is a customised name of maven plugin which add in the clobal tool configuration option, Next build the Build Application job after copy Build Application job artifact---"**/*.war"---- in Deployment_Application_staging_Env job build that job by using copy artifact plugin--Do same for Deployment_Application_Prod_Env job after add the scripts of the Deploy_Application_Staging_Env and Deploy_Application_Prod_Env jobs in this repository######
+//in above script  undetr tools--'myn'--is a customised name of maven plugin which add in the clobal tool configuration option, Next build the Build Application job after copy Build Application job artifact---"**/*.war"---- in Deployment_Application_staging_Env job build that job by using copy artifact plugin--Do same for Deployment_Application_Prod_Env job after add the scripts of the Deploy_Application_Staging_Env and Deploy_Application_Prod_Env jobs in this repository//
